@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Input from './input';
+import Select from './select'
 
 class ComplaintForm extends Component{
 
@@ -8,11 +9,31 @@ class ComplaintForm extends Component{
 
         this.state={
             fullName:'',
+            email: '',
+            reason:'',
+            reasonOptions: [
+                "My account was debited without authorization",
+                "My card was stolen",
+                "My card is expired",
+                "Others"
+            ]
         } }
 
-        handleFullNameChange = (events) => {
-            this.setState({fullName: events.target.value})
-        }
+    // handleFullNameChange = (event) =>{
+    //     this.setState({fullName: event.target.value})
+    // }
+
+    // handleEmailChange = (event) =>{
+    //     this.setState({email: event.target.value})
+    // }
+
+    // handleReasonChange = (event) =>{
+    //     this.setState({reason: event.target.value})
+    // }
+
+    handleInputChange = (event) => {
+        this.setState({[event.target.name]: event.target.value})
+    }
 
     render(){
         return(
@@ -24,6 +45,22 @@ class ComplaintForm extends Component{
                             placeholder='Enter your full name'
                             handleChange={'this.handleFullNameChange'}
                             value={this.state.fullName}/>
+
+                             <Input name='email'
+                            title='Email'
+                            inputType='email'
+                            placeholder='someone@email.com'
+                            handleChange={'this.handleEmailChange'}
+                            value={this.state.email}/>
+
+                    <Select
+                    title='Reason of Contact'
+                    name='reason'
+                    value={this.state.reason}
+                    options={this.state.reasonOptions}
+                    handleChange={this.handleReasonChange}
+                    />
+
                 </form>
             </div>
         )

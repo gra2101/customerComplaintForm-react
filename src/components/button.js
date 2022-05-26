@@ -1,13 +1,15 @@
 import React from "react";
 
- const Buttons = (props) =>{
+ const Button = (props) =>{
+     return(
      <div>
          <button 
+         onClick={props.onButtonClick}
          style={{backgroundColor: props.backgroundColor, margin: "10px"}}
-         className="btn btn-lg,">
+         className="btn btn-lg text-white">
              {props.title}
          </button>
      </div>
- }
+ )}
 
- export default Buttons;
+ export default Button;

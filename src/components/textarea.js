@@ -7,7 +7,7 @@ const Textarea = (props) =>{
             <textarea 
             className="form-control"
             name={props.name}
-            row={props.row}
+            rows={props.rows}
             cols={props.cols}
             value={props.value}
             onChange={props.handleChange}

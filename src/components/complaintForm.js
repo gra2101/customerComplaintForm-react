@@ -3,6 +3,7 @@ import Input from './input';
 import Select from './select';
 import Textarea from './textarea';
 import Button from './button';
+import Feedback from './feedback';
 
 class ComplaintForm extends Component{
 
@@ -19,7 +20,8 @@ class ComplaintForm extends Component{
                 "My card is expired",
                 "Others"
             ],
-            feedbackDetails: null
+            feedbackDetails: null,
+            showFeedbackdetails: false,
         } }
 
     // handleFullNameChange = (event) =>{
@@ -50,7 +52,7 @@ class ComplaintForm extends Component{
             description: description,
         }
 
-        this.setState({feedbackDetails: feedbackDetails})  
+        this.setState({feedbackDetails: feedbackDetails, showFeedbackdetails: true})  
         console.log({feedbackDetails})
     }
 
@@ -61,14 +63,15 @@ class ComplaintForm extends Component{
             fullName: '',
             email:'',
             reason: '',
-            description: ''
+            description: '',
+            showFeedbackdetails: false
         })
     }
 
     render(){
         return(
             <div className='row mt-4'>
-                <form>
+                <form className='col-md-6'>
                     <Input name='fullName'
                             title='Full Name'
                             inputType='text'
@@ -106,6 +109,12 @@ class ComplaintForm extends Component{
                     <Button title='Reset'  backgroundColor='#9b59b6' onButtonClick={this.handleFormReset}/>
 
                 </form>
+
+                {this.state.showFeedbackdetails && (
+                <div className='col-md-6'>
+                <Feedback feedbackDetails={this.state.feedbackDetails}/>  </div>
+                )}
+
             </div>
         )
     }

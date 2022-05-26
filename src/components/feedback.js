@@ -15,7 +15,7 @@ import React from "react";
          <p>{props.feedbackDetails.name}</p>
 
          <h5>Email</h5>
-         <p>{props.feedbackDetails.email}</p>e3
+         <p>{props.feedbackDetails.email}</p>
          <h5>Reason</h5>
          <p>{props.feedbackDetails.reason}</p>
 

@@ -52,7 +52,10 @@ class ComplaintForm extends Component{
             description: description,
         }
 
-        this.setState({feedbackDetails: feedbackDetails, showFeedbackdetails: true})  
+        if (fullName !=='' && email!=='' && reason!=='' && description !==''){
+            this.setState({feedbackDetails: feedbackDetails, showFeedbackdetails: true})
+        }
+          
         console.log({feedbackDetails})
     }
 

@@ -1,7 +1,7 @@
 {
   "name": "customer-service",
   "version": "0.1.0",
-  "homepage": "https://gra2101.github.io/customerComplaintForm-react",
+  "homepage": "https://gra2101.github.io/customerComplaintForm-reactt",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
